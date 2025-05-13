@@ -1,5 +1,3 @@
-# Interface additions - https://www.youtube.com/watch?v=D0D4Pa22iG0&t=41s -- https://docs.streamlit.io/develop/api-reference
-
 import streamlit as st
 from PIL import Image
 import torch

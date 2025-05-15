@@ -68,7 +68,14 @@ if uploaded_file is not None:
     with torch.no_grad():
         torch_im = transform(image).unsqueeze(0)  # Preprocess image
         outputs = model(torch_im)  # Run model on input
-        _, predicted = torch.max(outputs, 1)  # Get predicted class index
+        # Get softmax probabilities
+        probabilities = torch.nn.functional.softmax(outputs, dim=1)
+        confidence_score = torch.max(probabilities).item()  # Confidence of the top prediction
+
+        predicted_index = predicted.item()
+        predicted_class_name = label_map[predicted_index]
+        confidence_percentage = round(confidence_score * 100, 2)
+
 
     # Get the class name from index
     predicted_class_name = label_map[predicted.item()]
@@ -81,8 +88,13 @@ if uploaded_file is not None:
 
     # Display results
     st.header("AI Diagnosis")
-    st.subheader(f"Prediction: {predicted_class_name}")
-    st.subheader(f"Final Diagnosis: {binary_result}")
+    if confidence_score < 0.65:
+        st.warning("⚠️ The model is unsure about this prediction (low confidence). Please try uploading a clearer image or ensure the mole is well-lit and centred.")
+    else:
+        st.subheader(f"Prediction: {predicted_class_name}")
+        st.subheader(f"Final Diagnosis: {binary_result}")
+        st.caption(f"Model confidence: {confidence_percentage}%")
+
 
     # Apply Grad-CAM for visualisation - https://jacobgil.github.io/pytorch-gradcam-book/introduction.html
     target_layer = model.layer4[-1]  # Use the last convolutional layer in ResNet

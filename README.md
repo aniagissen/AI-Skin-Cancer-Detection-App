@@ -10,8 +10,10 @@ I have also added a folder of moles, named by what they should be diagnosed as, 
 
 Then run this code in your terminal:
 
-''' conda activate aim
+```
+conda activate aim
 
 cd /path/to/my/project/folder
 
-streamlit run ModelSlRun.py '''
+streamlit run ModelSlRun.py
+```

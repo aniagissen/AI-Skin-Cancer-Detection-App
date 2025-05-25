@@ -48,7 +48,7 @@ age = st.number_input("Age:", min_value=0, max_value=120, step=1)
 gender = st.selectbox("Gender:", ["Prefer not to say", "Male", "Female", "Non-binary", "Other"])
 country = st.text_input("Country of Residence:")
 skin_type = st.selectbox("Skin Type:", ["Fair", "Medium", "Olive", "Dark"])
-st.write("Upload an image of a mole and we will try and detect any signs of skin cancer")
+st.write("Upload an image of a mole and we will try and detect any signs of skin cancer (Limit 200MB per file • JPG, JPEG, PNG)")
 
 # Image upload
 uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
@@ -71,7 +71,7 @@ if uploaded_file is not None:
         # Get softmax probabilities
         probabilities = torch.nn.functional.softmax(outputs, dim=1)
         confidence_score = torch.max(probabilities).item()  # Confidence of the top prediction
-
+        _, predicted = torch.max(probabilities, 1)
         predicted_index = predicted.item()
         predicted_class_name = label_map[predicted_index]
         confidence_percentage = round(confidence_score * 100, 2)
@@ -90,6 +90,7 @@ if uploaded_file is not None:
     st.header("AI Diagnosis")
     if confidence_score < 0.65:
         st.warning("⚠️ The model is unsure about this prediction (low confidence). Please try uploading a clearer image or ensure the mole is well-lit and centred.")
+        st.stop()
     else:
         st.subheader(f"Prediction: {predicted_class_name}")
         st.subheader(f"Final Diagnosis: {binary_result}")
@@ -108,7 +109,7 @@ if uploaded_file is not None:
     st.header("Heatmapped Risk Areas")
     st.write("The highlighted regions indicate where the model focused on when making its prediction.")
     st.image(heatmap, caption="Grad-CAM Heatmap", use_container_width=True)
- 
+
 
     # Ollama LLM Feedback
     st.subheader("AI Skin Care Advice")

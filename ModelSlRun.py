@@ -97,7 +97,7 @@ if uploaded_file is not None:
         st.caption(f"Model confidence: {confidence_percentage}%")
 
 
-    # Apply Grad-CAM for visualisation - https://jacobgil.github.io/pytorch-gradcam-book/introduction.html
+    # Apply Grad-CAM for visualisation
     target_layer = model.layer4[-1]  # Use the last convolutional layer in ResNet
     cam = GradCAM(model=model, target_layers=[target_layer])
 
@@ -115,7 +115,7 @@ if uploaded_file is not None:
     st.subheader("AI Skin Care Advice")
     st.caption("Please take note this is written by an AI and you should always visit your GP or doctor if you have serious concern about skin cancer, even if this model did not detect anything.")
 
-    # Convert heatmap to base64 format for Ollama - ChatGPT
+    # Convert heatmap to base64 format for Ollama
     import base64
     from io import BytesIO
 

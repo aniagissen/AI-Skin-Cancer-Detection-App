@@ -13,7 +13,7 @@ from GradCam import get_heatmap
 from Prompts import build_prompt
 
 # Load model and preprocessing
-model_path = "Streamlit-App/skin_cancer_model.pth"
+model_path = "skin_cancer_model.pth"
 model = load_model(model_path)
 transform = get_transform()
 

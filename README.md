@@ -22,11 +22,11 @@ This project was built using the [HAM10000 dataset](https://www.kaggle.com/datas
 
 Please download the pre-trained model file (`skin_cancer_model.pth`) and place it inside the project folder:
 
-[Download Model File](https://artslondon-my.sharepoint.com/:u:/g/personal/a_gissen0620241_arts_ac_uk/EadLfF8fS0BJkro3ty4T3aYBzGP2Dx6dX6H72498-p9Ht?w=e-2kBlKW)
+[Download Model File](https://artslondon-my.sharepoint.com/:u:/r/personal/a_gissen0620241_arts_ac_uk/Documents/skin_cancer_model.pth?csf=1&web=1&e=tnLvyy)
 
 If you want to test the model on sample images, use the following folder of example moles (already labelled by diagnosis):
 
-[Download Example Mole Images](https://artslondon-my.sharepoint.com/:f:/g/personal/a_gissen0620241_arts_ac_uk/EovQpXFdRyxKu5sbjZPvIR8BAS8IV2QoQsV41lUcpkHMsg?e=nA8a8h)
+[Download Example Mole Images](https://artslondon-my.sharepoint.com/:f:/r/personal/a_gissen0620241_arts_ac_uk/Documents/Test%20Moles?csf=1&web=1&e=b1Afi3)
 
 ---
 

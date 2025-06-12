@@ -11,9 +11,14 @@ I have also added a folder of moles, named by what they should be diagnosed as, 
 Then run this code in your terminal:
 
 ```
-conda activate aim
+conda create --name SkinCancerAI python=3.12
+
+conda activate SkinCancerAI
+
+pip install -r requirements.txt
 
 cd /path/to/my/project/folder
 
-streamlit run ModelSlRun.py
+streamlit run RunApp.py
 ```
+

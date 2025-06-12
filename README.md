@@ -1,24 +1,47 @@
-# AI-Skin-Cancer-Detection-App
-Code for a streamlit app to diagnose skin lesions into seven types of skin cancer. 
+# AI Skin Cancer Detection App
 
-This was built using the HAM10000 dataset from the model - https://www.kaggle.com/datasets/surajghuwalewala/ham1000-segmentation-and-classification for a project using AI for Media.
+A Streamlit-based app prototype that diagnoses seven types of skin lesions using deep learning, with visual explanations (Grad-CAM) and tailored AI skincare advice via LLaVA-7B.
 
-Please download the model file path - https://artslondon-my.sharepoint.com/:u:/g/personal/a_gissen0620241_arts_ac_uk/EaIdLF8fS0BJkro3ty4T3aYBzGP2Dx6dX6H72498-p9Htw?e=2kBlKW
+---
 
-I have also added a folder of moles, named by what they should be diagnosed as, if you want to use those as examples rather than having to search for some. https://artslondon-my.sharepoint.com/:f:/g/personal/a_gissen0620241_arts_ac_uk/EovQpXFdRyxKu5sbjZPvlR8BAS8lV2oQsV41lUcplkHMsg?e=aN8a8h
+## Dataset
 
+This project was built using the [HAM10000 dataset](https://www.kaggle.com/datasets/surajghuwalewala/ham10000-segmentation-and-classification), which includes thousands of dermatoscopic images across the following classes:
 
-Then run this code in your terminal:
+- Actinic keratoses
+- Basal cell carcinoma
+- Benign keratosis-like lesions
+- Dermatofibroma
+- Melanocytic nevi
+- Melanoma
+- Vascular lesions
+
+---
+
+## Model + File Downloads
+
+Please download the pre-trained model file (`skin_cancer_model.pth`) and place it inside the project folder:
+
+[Download Model File](https://artslondon-my.sharepoint.com/:u:/g/personal/a_gissen0620241_arts_ac_uk/EadLfF8fS0BJkro3ty4T3aYBzGP2Dx6dX6H72498-p9Ht?w=e-2kBlKW)
+
+If you want to test the model on sample images, use the following folder of example moles (already labelled by diagnosis):
+
+[Download Example Mole Images](https://artslondon-my.sharepoint.com/:f:/g/personal/a_gissen0620241_arts_ac_uk/EovQpXFdRyxKu5sbjZPvIR8BAS8IV2QoQsV41lUcpkHMsg?e=nA8a8h)
+
+---
+
+## Setup Instructions
+
+In your terminal, run the following:
 
 ```
+# Create and activate the environment
 conda create --name SkinCancerAI python=3.12
-
 conda activate SkinCancerAI
 
+# Install dependencies
 pip install -r requirements.txt
 
-cd /path/to/my/project/folder
-
-streamlit run RunApp.py
-```
-
+# Run the Streamlit app
+cd /path/to/AI-Skin-Cancer-Detection-App/Streamlit-App
+streamlit run Run-App.py

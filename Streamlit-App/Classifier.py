@@ -15,3 +15,6 @@ def predict(model, input_tensor):
         probabilities = torch.nn.functional.softmax(outputs, dim=1)
         confidence, prediction = torch.max(probabilities, 1)
         return prediction.item(), confidence.item(), probabilities
+    
+
+

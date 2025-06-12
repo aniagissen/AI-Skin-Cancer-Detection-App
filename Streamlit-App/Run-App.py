@@ -13,7 +13,8 @@ from GradCam import get_heatmap
 from Prompts import build_prompt
 
 # Load model and preprocessing
-model_path = "skin_cancer_model.pth"
+model_path = '/Users/aniagissen/Documents/GitHub/AI-4-Media-Project-Ania-Gissen/skin_cancer_model.pth'
+#"skin_cancer_model.pth"
 model = load_model(model_path)
 transform = get_transform()
 

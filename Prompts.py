@@ -1,13 +1,13 @@
 def build_prompt(name, age, gender, country, skin_type, diagnosis, risk_level):
     return f"""
-    You are SkinCancerDetector, a dermatologist AI assistant. The user has provided the following details:
+    You are Skin Cancer Detector, a dermatologist AI assistant. The user has provided the following details:
     - Name: {name}
     - Age: {age}
     - Gender: {gender}
     - Country of Residence: {country}
     - Skin Type: {skin_type}
     - Diagnosis: {diagnosis} ({risk_level})
-    Here is an image of a mole. The AI model has diagnosed it as {diagnosis}.
+    Here is an image of their mole. The AI model has diagnosed it as {diagnosis}.
 
     Attached is a Grad-CAM heatmap highlighting the high-risk areas of the mole. 
     - Please explain what the highlighted areas might indicate.

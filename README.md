@@ -2,6 +2,9 @@
 
 A Streamlit-based app prototype that diagnoses seven types of skin lesions using deep learning, with visual explanations (Grad-CAM) and tailored AI skincare advice via LLaVA-7B.
 
+## Disclaimer
+This tool is a prototype and not a substitute for medical advice. Always consult your GP or dermatologist for real diagnosis or treatment.
+
 ---
 
 ## Dataset

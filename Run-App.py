@@ -13,7 +13,7 @@ from GradCam import get_heatmap
 from Prompts import build_prompt
 
 # Load model and preprocessing
-model_path = '/Users/aniagissen/Documents/GitHub/AI-4-Media-Project-Ania-Gissen/skin_cancer_model.pth'
+model_path = 'skin_cancer_model.pth'
 #"skin_cancer_model.pth"
 model = load_model(model_path)
 transform = get_transform()
@@ -56,7 +56,7 @@ if uploaded_file:
 
     st.header("AI Diagnosis")
     if confidence_score < 0.65:
-        st.warning("⚠️ Low confidence prediction. Please try uploading a clearer image.")
+        st.warning("Low confidence prediction. Please try uploading a clearer image.")
         st.caption(f"Model confidence: {confidence_percentage}%")
         st.stop()
     else:
